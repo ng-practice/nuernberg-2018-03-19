@@ -45,7 +45,7 @@ export class BooksComponent implements OnInit {
   }
 
   sort(book?: Book) {
-    this.books.sort((current, next) => next.rating - current.rating);
+    this.books = [...this.books].sort((current, next) => next.rating - current.rating);
   }
 
   removeBookFromList(isbn: string) {

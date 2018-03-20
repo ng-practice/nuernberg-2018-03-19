@@ -12,17 +12,22 @@
               <li>ISBN: {{ data.isbn | isbn:3:'-' }}</li>
             </ul>
           </div>
+          <!-- <div class="card-img">
+            <img
+              src="assets/img/book-covers/dummy.png"
+              [attr.alt]="data.title">
+          </div> -->
           <div class="card-block">
-              <div class="card-title">
-                  {{ data.subtitle }}
-              </div>
-              <div class="card-text">
-                  {{ data.authors }}
-              </div>
+            <div class="card-title">
+              {{ data.subtitle }}
+            </div>
+            <div class="card-text">
+              {{ data.authors }}
+            </div>
           </div>
           <div class="card-footer">
-            <button (click)="voteUp()" class="btn btn-sm">+</button>
-            <button (click)="voteDown()" class="btn btn-sm">-</button>
+            <button (tr-click-once)="voteUp()" class="btn btn-sm">+</button>
+            <button (tr-click-once)="voteDown()" class="btn btn-sm">-</button>
             <button (click)="emitRemove()" class="btn btn-sm">x</button>
           </div>
       </div>
