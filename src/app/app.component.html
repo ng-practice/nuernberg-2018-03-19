@@ -3,5 +3,6 @@
 <tr-book-grid-element
   [data]="book"
   (rate)="sort($event)"
+  (remove)="removeBookFromList($event)"
   *ngFor="let book of books">
 </tr-book-grid-element>

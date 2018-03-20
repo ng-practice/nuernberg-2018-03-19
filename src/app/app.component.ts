@@ -45,4 +45,8 @@ export class AppComponent implements OnInit {
   sort(book?: Book) {
     this.books.sort((current, next) => next.rating - current.rating);
   }
+
+  removeBookFromList(isbn: string) {
+    this.books = this.books.filter(b => b.isbn !== isbn);
+  }
 }
