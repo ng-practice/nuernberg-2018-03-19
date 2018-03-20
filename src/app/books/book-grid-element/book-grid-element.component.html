@@ -2,13 +2,14 @@
   <div class="col-lg-5 col-md-8 col-sm-12 col-xs-12">
       <div class="card">
           <div class="card-header">
-              {{ data.title }}
+              {{ data.title | uppercase }}
           </div>
           <div class="card-block">
             <ul class="list">
-              <li>Price: {{ data.price }}</li>
+              <li>Published At: {{ data.publishedAt | date: 'dd.MM.yyyy' }}</li>
+              <li>Price: {{ data.price | currency:'EU' }}</li>
               <li>Rating: {{ data.rating }}</li>
-              <li>ISBN: {{ data.isbn }}</li>
+              <li>ISBN: {{ data.isbn | isbn:3:'-' }}</li>
             </ul>
           </div>
           <div class="card-block">

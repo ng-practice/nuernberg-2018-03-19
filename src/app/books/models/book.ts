@@ -19,7 +19,8 @@ export class Book {
     public subtitle: string,
     public authors: string[],
     public price: number,
-    rating = 0
+    rating = 0,
+    public publishedAt = new Date()
   ) {
     this.rating = rating;
   }
