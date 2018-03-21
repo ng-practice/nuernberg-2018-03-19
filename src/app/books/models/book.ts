@@ -22,7 +22,7 @@ export class Book {
     public description: string,
     rating = 0,
     public publishedAt = new Date(),
-    public cover = '/assets/img/book-cover/dummy.png',
+    public cover: string
   ) {
     this.rating = rating;
   }

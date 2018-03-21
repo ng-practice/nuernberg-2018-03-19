@@ -14,8 +14,12 @@
           </div>
           <div class="card-img">
             <img
+              *ngIf="data.cover; else noCover"
               [attr.src]="data.cover"
               [attr.alt]="data.title">
+            <ng-template #noCover>
+              <img  src="/assets/img/book-covers/dummy.png" alt="No cover">
+            </ng-template>
           </div>
           <div class="card-block">
             <div class="card-title">
