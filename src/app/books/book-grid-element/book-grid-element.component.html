@@ -12,11 +12,11 @@
               <li>ISBN: {{ data.isbn | isbn:3:'-' }}</li>
             </ul>
           </div>
-          <!-- <div class="card-img">
+          <div class="card-img">
             <img
-              src="assets/img/book-covers/dummy.png"
+              [attr.src]="data.cover"
               [attr.alt]="data.title">
-          </div> -->
+          </div>
           <div class="card-block">
             <div class="card-title">
               {{ data.subtitle }}

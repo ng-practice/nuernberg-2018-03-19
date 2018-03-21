@@ -9,7 +9,8 @@
 
 <tr-book-grid-element
   [data]="book"
-  (rate)="sort($event)"
+  (rate)="sortAfterRating()"
   (remove)="removeBookFromList($event)"
+  (update)="updateBook($event)"
   *ngFor="let book of books | searchByTitle:query">
 </tr-book-grid-element>

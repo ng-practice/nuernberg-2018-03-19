@@ -30,8 +30,9 @@ module.exports = function Books(db: JsonDb) {
 
   function create(book: Book) {
     const isbn = book.isbn;
+    book.rating = book['_rating'];
 
-    if (!isbn || this.single(isbn)) { return null; }
+    if (!isbn) { return null; }
 
     delete book.isbn;
 

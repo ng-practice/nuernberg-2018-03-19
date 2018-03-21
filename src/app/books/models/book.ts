@@ -20,7 +20,8 @@ export class Book {
     public authors: string[],
     public price: number,
     rating = 0,
-    public publishedAt = new Date()
+    public publishedAt = new Date(),
+    public cover = '/assets/img/book-cover/dummy.png'
   ) {
     this.rating = rating;
   }
