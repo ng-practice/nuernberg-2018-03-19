@@ -19,7 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "tr",
       "styles": [
-        "../node_modules/clarity-ui/clarity-ui.min.css"
+        "../node_modules/@clr/ui/clr-ui.min.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

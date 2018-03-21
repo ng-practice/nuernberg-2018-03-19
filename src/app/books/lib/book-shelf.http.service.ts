@@ -31,6 +31,7 @@ export class BookShelfHttp {
           book.subtitle,
           book.authors,
           Math.random() * 100,
+          book.description,
           book.rating,
           new Date(),
           book.cover

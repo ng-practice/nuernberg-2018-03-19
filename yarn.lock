@@ -164,6 +164,20 @@
     typescript "2.4.1"
     yargs "8.0.2"
 
+"@clr/angular@^0.11.9":
+  version "0.11.9"
+  resolved "https://registry.yarnpkg.com/@clr/angular/-/angular-0.11.9.tgz#8185c64ad19268a9dae0976d30f794bcf21d83b5"
+  dependencies:
+    tslib "^1.7.1"
+
+"@clr/icons@^0.11.9":
+  version "0.11.9"
+  resolved "https://registry.yarnpkg.com/@clr/icons/-/icons-0.11.9.tgz#9b96ac8703e2252ed6b8484226d98427e8c7d437"
+
+"@clr/ui@^0.11.9":
+  version "0.11.9"
+  resolved "https://registry.yarnpkg.com/@clr/ui/-/ui-0.11.9.tgz#7dd3ba4b8585c75dbf4bb125b3c2362fd58b50c5"
+
 "@ngtools/json-schema@1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@ngtools/json-schema/-/json-schema-1.2.0.tgz#06e5ecd29e9a37d260a447dd873ea2becd228c4f"

@@ -19,9 +19,10 @@ export class Book {
     public subtitle: string,
     public authors: string[],
     public price: number,
+    public description: string,
     rating = 0,
     public publishedAt = new Date(),
-    public cover = '/assets/img/book-cover/dummy.png'
+    public cover = '/assets/img/book-cover/dummy.png',
   ) {
     this.rating = rating;
   }

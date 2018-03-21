@@ -1,8 +1,8 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { ClarityModule } from '@clr/angular';
 
 import { AppComponent } from './app.component';
-
 import { BooksModule } from './books/books.module';
 
 @NgModule({
@@ -11,7 +11,7 @@ import { BooksModule } from './books/books.module';
   ],
   imports: [
     BrowserModule,
-
+    ClarityModule,
     BooksModule
   ],
   providers: [],

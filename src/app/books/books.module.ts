@@ -10,6 +10,7 @@ import { BooksShelf } from './lib/books-shelf.service';
 import { IsbnPipe } from './pipes/isbn.pipe';
 import { SearchByTitlePipe } from './pipes/search-by-title.pipe';
 import { BookShelfHttp } from './lib/book-shelf.http.service';
+import { BookFormComponent } from './book-form/book-form.component';
 
 @NgModule({
   imports: [CommonModule, HttpClientModule, UtilitiesModule],
@@ -17,7 +18,8 @@ import { BookShelfHttp } from './lib/book-shelf.http.service';
     BookGridElementComponent,
     BooksComponent,
     IsbnPipe,
-    SearchByTitlePipe
+    SearchByTitlePipe,
+    BookFormComponent
   ],
   exports: [BooksComponent],
   providers: [BookShelfHttp]
