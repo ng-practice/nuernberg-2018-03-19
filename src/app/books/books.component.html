@@ -1,16 +1,31 @@
-<div class="form-group">
-  <label for="search-box">Type a title</label>
-  <input
-    (input)="updateSearchQueary($event)"
-    type="text"
-    id="search-box"
-    placeholder="Enter a title">
+<div *ngIf="errorMessage"
+     class="alert alert-danger">
+    <div class="alert-items">
+        <div
+          class="alert-item static">
+            <span
+              class="alert-text">
+                {{ errorMessage }}
+            </span>
+        </div>
+    </div>
 </div>
 
-<tr-book-grid-element
-  [data]="book"
-  (rate)="sortAfterRating()"
-  (remove)="removeBookFromList($event)"
-  (update)="updateBook($event)"
-  *ngFor="let book of books | searchByTitle:query">
+
+<div class="form-group">
+  <label for="search-box">Type a title</label>
+  <input (input)="updateSearchQueary($event)" type="text" id="search-box" placeholder="Enter a title">
+</div>
+
+<div
+  *ngIf="isBusy"
+  class="progress loop">
+  <progress></progress>
+</div>
+
+
+<tr-book-grid-element [data]="book" (rate)="sortAfterRating()" (remove)="removeBookFromList($event)" (update)="updateBook($event)"
+  *ngFor="let book of books$
+            | async
+            | searchByTitle:query">
 </tr-book-grid-element>
