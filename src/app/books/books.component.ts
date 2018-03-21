@@ -37,7 +37,7 @@ export class BooksComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     /** VARIANTE 1 */
     /** unsubscribe from stream */
-    this._subscription.unsubscribe();
+    // this._subscription.unsubscribe();
   }
 
   updateSearchQueary(event: KeyboardEvent) {

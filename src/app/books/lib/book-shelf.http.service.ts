@@ -22,33 +22,35 @@ export class BookShelfHttp {
 
   constructor(private _http: HttpClient) {}
 
+  single(isbn: string): Observable<Book> {
+    return this._http
+      .get<BookRaw>(`${this.apiEndpoint}/book/${isbn}`)
+      .pipe(map(bookRaw => this._createBook(bookRaw)));
+  }
+
+  private _createBook(bookRaw: BookRaw): Book {
+    return new Book(
+      bookRaw.isbn,
+      bookRaw.title,
+      bookRaw.subtitle,
+      bookRaw.authors,
+      Math.random() * 100,
+      bookRaw.description,
+      bookRaw.rating,
+      new Date(),
+      bookRaw.cover
+    );
+  }
+
   all(): Observable<Book[]> {
     return this._http
       .get<BookRaw[]>(`${this.apiEndpoint}/books`)
-      .pipe(
-        map(books =>
-          books.map(
-            book =>
-              new Book(
-                book.isbn,
-                book.title,
-                book.subtitle,
-                book.authors,
-                Math.random() * 100,
-                book.description,
-                book.rating,
-                new Date(),
-                book.cover
-              )
-          )
-        )
-      );
+      .pipe(map(books => books.map(book => this._createBook(book))));
   }
 
-  // import { _throw } from 'rxjs/observable/throw';
   update(book: Book) {
     return this._http
-      .put(`${this.apiEndpoint}/book`, undefined)
+      .put(`${this.apiEndpoint}/book`, book)
       .pipe(
         catchError(err =>
           _throw(new Error('Kritischer Fehler! API nicht erreichbar.'))

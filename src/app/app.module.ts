@@ -3,16 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ClarityModule } from '@clr/angular';
 
 import { AppComponent } from './app.component';
-import { BooksModule } from './books/books.module';
+import { AppRoutingModule } from './app.routing';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     ClarityModule,
-    BooksModule
+
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -33,6 +33,7 @@
             <button (tr-click-once)="voteUp()" class="btn btn-sm">+</button>
             <button (tr-click-once)="voteDown()" class="btn btn-sm">-</button>
             <button (click)="emitRemove()" class="btn btn-sm">x</button>
+            <a [routerLink]="['book', data.isbn, 'edit']">Edit</a>
           </div>
       </div>
   </div>

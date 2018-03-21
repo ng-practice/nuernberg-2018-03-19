@@ -1,32 +1,39 @@
-<form>
+<a routerLink="/" class="btn btn-link">Back to List</a>
+<form [formGroup]="editForm">
   <section class="form-block">
       <label>Edit a book</label>
       <div class="form-group">
-          <label for="book-titlisbn">ISBN</label>
-          <input type="text" disabled id="book-isbn" size="45">
+          <label for="book-isbn">ISBN</label>
+          <input formControlName="isbn" type="text" id="book-isbn" size="45">
       </div>
       <div class="form-group">
           <label for="book-title">Title</label>
-          <input type="text" id="book-title" placeholder="Enter value here" size="45">
+          <input formControlName="title" type="text" id="book-title" placeholder="Enter value here" size="45">
       </div>
       <div class="form-group">
           <label for="book-subtitle">Subtitle</label>
-          <input type="password" id="book-subtitle" placeholder="Enter another value here" size="35">
+          <input formControlName="subtitle" type="text" id="book-subtitle" placeholder="Enter another value here" size="35">
       </div>
       <div class="form-group">
           <label for="book-description">Description</label>
-          <textarea id="book-description" rows="5"></textarea>
+          <textarea formControlName="description" id="book-description" rows="5"></textarea>
       </div>
 
       <div formArrayName="authors">
         <!-- generate for each author in the array-->
-        <div class="form-group">
+        <div
+          *ngFor="let author of authors.controls; index as i;"
+          class="form-group">
           <label for="">Autor</label>
-          <input type="text">
+          <input [formControlName]="i" type="text">
           <!-- Add validation message -->
         </div>
       </div>
-
-      <button type="submit" class="btn btn-primary">Update Book</button>
+      <button
+        [disabled]="editForm.invalid"
+        type="submit"
+        class="btn btn-primary">
+        Update Book
+      </button>
   </section>
 </form>
