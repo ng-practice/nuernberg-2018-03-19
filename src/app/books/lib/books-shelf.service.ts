@@ -16,9 +16,21 @@ export class BooksShelf {
         ['Misko Hevery', 'Igor Minar'],
         45,
         '',
-        2
+        2,
+        new Date(),
+        ''
       ),
-      new Book('1010120202', 'VueJs', 'Awesome', ['Evan You'], 35, '', 1),
+      new Book(
+        '1010120202',
+        'VueJs',
+        'Awesome',
+        ['Evan You'],
+        35,
+        '',
+        1,
+        new Date(),
+        ''
+      ),
       new Book(
         '1010120203',
         'Aurelia',
@@ -26,7 +38,9 @@ export class BooksShelf {
         ['Rob Eisenberg'],
         64,
         '',
-        5
+        5,
+        new Date(),
+        ''
       )
     ]).pipe(delay(2000));
   }
