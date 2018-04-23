@@ -9,6 +9,15 @@
       <div class="form-group">
           <label for="book-title">Title</label>
           <input formControlName="title" type="text" id="book-title" placeholder="Enter value here" size="45">
+          <!-- Show Validation Message after the user has used it -->
+          <div *ngIf="editForm.controls['title'].errors &&
+                      editForm.controls['title'].dirty">
+            Der Titel muss mindestens 5 Zeichen enthalten
+
+            <div *ngIf="editForm.controls['title'].errors.required">
+              Bitte geben Sie den Titel des Buchs ein.
+            </div>
+          </div>
       </div>
       <div class="form-group">
           <label for="book-subtitle">Subtitle</label>
@@ -27,10 +36,17 @@
           <label for="">Autor</label>
           <input [formControlName]="i" type="text">
           <!-- Add validation message -->
+          <button
+          (click)="removeAuthor(i)"
+          class="btn btn-default">-</button>
         </div>
       </div>
       <button
+        (click)="addAuthor()"
+        class="btn btn-default">+</button>
+      <button
         [disabled]="editForm.invalid"
+        (click)="updateBook(editForm.value)"
         type="submit"
         class="btn btn-primary">
         Update Book

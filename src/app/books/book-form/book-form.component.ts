@@ -44,6 +44,25 @@ export class BookFormComponent implements OnInit {
     this._fillEditForm(this.book$);
   }
 
+  updateBook(formValues) {
+    const book = {
+      ...this.book$,
+      ...formValues
+    };
+
+    this._bookShelf.update(book).subscribe();
+  }
+
+  addAuthor() {
+    this.authors.push(
+      this._fb.control('', [Validators.required])
+    );
+  }
+
+  removeAuthor(index: number) {
+    this.authors.removeAt(index);
+  }
+
   private _fillEditForm(book: Book): void {
     Object.keys(this.editForm.controls)
       .map(key => ({ key, control: this.editForm.controls[key] }))
